@@ -1,50 +1,113 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 ```
-// Smooth scrolling for navigation links
-const links = document.querySelectorAll('a[href^="#"]');
+/*
+ * Smooth scrolling
+ */
 
-links.forEach(link => {
+const links = document.querySelectorAll(
+    'a[href^="#"]'
+);
+
+links.forEach(function (link) {
+
     link.addEventListener("click", function (event) {
+
         event.preventDefault();
 
-        const target = document.querySelector(this.getAttribute("href"));
+        const targetId =
+            this.getAttribute("href");
+
+        const target =
+            document.querySelector(targetId);
 
         if (target) {
+
             target.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
+
         }
+
     });
+
 });
 
-// Scroll-to-top button
-const topButton = document.createElement("button");
 
-topButton.innerHTML = "↑";
-topButton.id = "topButton";
-topButton.title = "Back to top";
+/*
+ * Scroll-to-top button
+ */
 
-document.body.appendChild(topButton);
+const topButton =
+    document.getElementById("topButton");
 
-// Show button after scrolling down
+
 window.addEventListener("scroll", function () {
+
     if (window.scrollY > 300) {
+
         topButton.classList.add("show");
+
     } else {
+
         topButton.classList.remove("show");
+
     }
+
 });
 
-// Scroll back to top
+
+/*
+ * Back to top
+ */
+
 topButton.addEventListener("click", function () {
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
+});
+
+
+/*
+ * Simple fade-in effect
+ */
+
+const sections =
+    document.querySelectorAll(".section");
+
+
+const observer =
+    new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+sections.forEach(function (section) {
+
+    observer.observe(section);
+
 });
 ```
 
 });
-
