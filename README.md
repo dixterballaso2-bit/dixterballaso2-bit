@@ -2,7 +2,7 @@
 
 ## 🏠 Home
 
-Hi! I'm Dixter Ballaso, a Bachelor of Science in Information Technology
+Yoww wassup! I'm Dixter Ballaso, a Bachelor of Science in Information Technology
 student interested in programming, networking, and software development.
 
 ## 🎓 Education
