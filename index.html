@@ -1,671 +1,275 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  }
-
-html {
-scroll-behavior: smooth;
-}
-
-body {
-font-family: Arial, Helvetica, sans-serif;
-background: #0f172a;
-color: #e2e8f0;
-line-height: 1.6;
-}
-
-/* =========================
-NAVIGATION
-========================= */
-
-header {
-position: sticky;
-top: 0;
-z-index: 1000;
-background: rgba(2, 6, 23, 0.95);
-border-bottom: 1px solid #1e293b;
-backdrop-filter: blur(10px);
-}
-
-.navbar {
-max-width: 1100px;
-margin: auto;
+<!DOCTYPE html>
 
-```
-padding: 18px 25px;
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-```
-
-}
-
-.logo {
-color: #38bdf8;
-font-size: 22px;
-}
-
-.nav-links {
-list-style: none;
-
-```
-display: flex;
-gap: 25px;
-```
-
-}
-
-.nav-links a {
-color: #e2e8f0;
-text-decoration: none;
-
-```
-transition: 0.3s;
-```
-
-}
-
-.nav-links a:hover {
-color: #38bdf8;
-}
-
-/* =========================
-HOME
-========================= */
-
-.hero {
-min-height: 90vh;
-
-```
-display: flex;
-justify-content: center;
-align-items: center;
-
-text-align: center;
-
-padding: 80px 20px;
-
-background:
-    radial-gradient(
-        circle at center,
-        #172554 0%,
-        #0f172a 45%,
-        #020617 100%
-    );
-```
-
-}
-
-.hero-content {
-max-width: 800px;
-}
-
-/* Profile Picture */
-
-.profile-picture {
-width: 190px;
-height: 190px;
-
-```
-object-fit: cover;
-
-border-radius: 50%;
-
-border: 4px solid #38bdf8;
-
-margin-bottom: 25px;
-
-box-shadow:
-    0 0 25px rgba(56, 189, 248, 0.4);
-
-transition: 0.3s;
-```
-
-}
-
-.profile-picture:hover {
-transform: scale(1.05);
-}
-
-/* Home Text */
-
-.small-text {
-color: #38bdf8;
-
-```
-font-weight: bold;
-
-letter-spacing: 4px;
-
-font-size: 14px;
-```
-
-}
-
-.hero h1 {
-font-size: 60px;
-
-```
-margin: 8px 0;
-
-color: white;
-```
-
-}
-
-.hero h2 {
-color: #94a3b8;
-
-```
-margin-bottom: 20px;
-
-font-size: 25px;
-```
-
-}
-
-.intro {
-color: #cbd5e1;
-
-```
-max-width: 650px;
-
-margin: 0 auto 30px;
-
-font-size: 17px;
-```
-
-}
-
-/* Button */
-
-.btn {
-display: inline-block;
-
-```
-background: #38bdf8;
-
-color: #020617;
-
-padding: 13px 28px;
-
-border-radius: 8px;
-
-text-decoration: none;
-
-font-weight: bold;
-
-transition: 0.3s;
-```
-
-}
-
-.btn:hover {
-background: #7dd3fc;
-
-```
-transform: translateY(-3px);
-
-box-shadow:
-    0 8px 20px rgba(56, 189, 248, 0.25);
-```
-
-}
-
-/* =========================
-SECTIONS
-========================= */
-
-.section {
-max-width: 1100px;
-
-```
-margin: auto;
-
-padding: 90px 25px;
-```
-
-}
-
-.section-title {
-text-align: center;
-
-```
-font-size: 34px;
-
-margin-bottom: 45px;
-
-color: white;
-```
-
-}
-
-/* =========================
-EDUCATION
-========================= */
-
-.card {
-max-width: 750px;
-
-```
-margin: auto;
-
-padding: 30px;
-
-text-align: center;
+<html lang="en">
 
-background: #1e293b;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-border: 1px solid #334155;
-
-border-radius: 15px;
-
-transition: 0.3s;
-```
-
-}
-
-.card:hover {
-border-color: #38bdf8;
-
-```
-transform: translateY(-5px);
-```
-
-}
-
-.card h3 {
-color: #38bdf8;
-
-```
-margin-bottom: 10px;
-
-font-size: 22px;
-```
-
-}
-
-.card p {
-color: #cbd5e1;
-}
-
-.card .description {
-margin-top: 15px;
-
-```
-color: #94a3b8;
-```
-
-}
-
-/* =========================
-PROJECTS
-========================= */
-
-.projects {
-display: grid;
-
-```
-grid-template-columns:
-    repeat(3, 1fr);
-
-gap: 25px;
-```
-
-}
-
-.project-card {
-position: relative;
-
-```
-padding: 30px;
-
-background: #1e293b;
-
-border: 1px solid #334155;
-
-border-radius: 15px;
-
-transition: 0.3s;
-```
-
-}
-
-.project-card:hover {
-transform: translateY(-8px);
-
-```
-border-color: #38bdf8;
-
-box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25);
-```
-
-}
-
-.project-number {
-color: #38bdf8;
-
-```
-font-size: 14px;
-
-font-weight: bold;
-
-margin-bottom: 15px;
-```
-
-}
-
-.project-card h3 {
-color: white;
-
-```
-margin-bottom: 15px;
-
-font-size: 20px;
-```
-
-}
-
-.project-card p {
-color: #cbd5e1;
-
-```
-margin-bottom: 20px;
-```
-
-}
-
-/* Technologies */
-
-.technologies {
-display: flex;
-
-```
-flex-wrap: wrap;
-
-gap: 8px;
-```
-
-}
-
-.technologies span {
-background: #0f172a;
-
 ```
-color: #38bdf8;
+<title>Dixter Ballaso | Programmer Portfolio</title>
 
-border: 1px solid #38bdf8;
-
-padding: 5px 10px;
-
-border-radius: 20px;
-
-font-size: 12px;
+<link rel="stylesheet" href="style.css">
 ```
-
-}
 
-/* =========================
-SKILLS
-========================= */
+</head>
 
-.skills {
-display: grid;
+<body>
 
 ```
-grid-template-columns:
-    repeat(3, 1fr);
+<!-- Navigation -->
+<header>
+    <nav class="navbar">
 
-gap: 18px;
-```
+        <h2 class="logo">Dixter Ballaso</h2>
 
-}
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-.skill {
-background: #1e293b;
-
-```
-border: 1px solid #334155;
+    </nav>
+</header>
 
-padding: 25px;
 
-text-align: center;
+<!-- HOME -->
+<section id="home" class="hero">
 
-border-radius: 12px;
+    <div class="hero-content">
 
-transition: 0.3s;
-```
+        <!-- Profile Picture -->
+        <img
+            src="IMG_20260923_094121.png"
+            alt="Dixter Ballaso"
+            class="profile-picture"
+        >
 
-}
+        <p class="small-text">HELLO, I'M</p>
 
-.skill:hover {
-border-color: #38bdf8;
+        <h1>Dixter Ballaso</h1>
 
-```
-transform: translateY(-5px);
-```
+        <h2>BSIT Student & Aspiring Developer</h2>
 
-}
+        <p class="intro">
+            I'm a Bachelor of Science in Information Technology student
+            interested in programming, networking, and software development.
+        </p>
 
-.skill span {
-font-size: 30px;
-}
+        <a href="#projects" class="btn">
+            View My Projects
+        </a>
 
-.skill p {
-margin-top: 8px;
+    </div>
 
-```
-color: #38bdf8;
+</section>
 
-font-weight: bold;
-```
 
-}
+<!-- EDUCATION -->
+<section id="education" class="section">
 
-/* =========================
-CONTACT
-========================= */
+    <h2 class="section-title">🎓 Education</h2>
 
-.contact {
-text-align: center;
-}
+    <div class="card">
 
-.contact p {
-color: #cbd5e1;
+        <h3>Bachelor of Science in Information Technology</h3>
 
-```
-margin-bottom: 25px;
-```
+        <p>
+            Nueva Vizcaya State University (NVSU)
+        </p>
 
-}
+        <p class="description">
+            Currently developing my skills in programming,
+            networking, databases, and software development.
+        </p>
 
-/* GitHub Button */
+    </div>
 
-.github-button {
-display: inline-block;
+</section>
 
-```
-padding: 12px 25px;
 
-background: #38bdf8;
+<!-- PROJECTS -->
+<section id="projects" class="section">
 
-color: #020617;
+    <h2 class="section-title">🚀 Projects</h2>
 
-text-decoration: none;
+    <div class="projects">
 
-font-weight: bold;
 
-border-radius: 8px;
+        <!-- Project 1 -->
+        <div class="project-card">
 
-transition: 0.3s;
-```
+            <div class="project-number">
+                01
+            </div>
 
-}
+            <h3>
+                Networking Equipment Management System
+            </h3>
 
-.github-button:hover {
-background: #7dd3fc;
+            <p>
+                A system for managing networking equipment,
+                including inventory, borrowing, returning,
+                and maintenance.
+            </p>
 
-```
-transform: translateY(-3px);
-```
+            <div class="technologies">
 
-}
+                <span>Java</span>
+                <span>SQL</span>
+                <span>Power Apps</span>
 
-/* =========================
-FOOTER
-========================= */
+            </div>
 
-footer {
-text-align: center;
+        </div>
 
-```
-padding: 35px 20px;
 
-background: #020617;
+        <!-- Project 2 -->
+        <div class="project-card">
 
-color: #94a3b8;
+            <div class="project-number">
+                02
+            </div>
 
-border-top: 1px solid #1e293b;
-```
+            <h3>
+                Student Information System
+            </h3>
 
-}
+            <p>
+                A system designed to organize and manage
+                student information and records.
+            </p>
 
-footer p:first-child {
-margin-bottom: 8px;
-}
+            <div class="technologies">
 
-/* =========================
-SCROLL TO TOP
-========================= */
+                <span>Java</span>
+                <span>SQL</span>
+                <span>HTML</span>
+                <span>CSS</span>
 
-#topButton {
-position: fixed;
+            </div>
 
-```
-bottom: 25px;
+        </div>
 
-right: 25px;
 
-width: 48px;
+        <!-- Project 3 -->
+        <div class="project-card">
 
-height: 48px;
+            <div class="project-number">
+                03
+            </div>
 
-border: none;
+            <h3>
+                Network Configuration Project
+            </h3>
 
-border-radius: 50%;
+            <p>
+                A networking project involving network topology,
+                IP addressing, VLAN configuration, and basic routing.
+            </p>
 
-background: #38bdf8;
+            <div class="technologies">
 
-color: #020617;
+                <span>Cisco Packet Tracer</span>
+                <span>Networking</span>
 
-font-size: 25px;
+            </div>
 
-font-weight: bold;
+        </div>
 
-cursor: pointer;
+    </div>
 
-opacity: 0;
+</section>
 
-visibility: hidden;
 
-transition: 0.3s;
+<!-- SKILLS -->
+<section id="skills" class="section">
 
-z-index: 999;
-```
+    <h2 class="section-title">🛠️ Skills</h2>
 
-}
+    <div class="skills">
 
-#topButton.show {
-opacity: 1;
+        <div class="skill">
+            <span>☕</span>
+            <p>Java</p>
+        </div>
 
-```
-visibility: visible;
-```
+        <div class="skill">
+            <span>🌐</span>
+            <p>HTML & CSS</p>
+        </div>
 
-}
+        <div class="skill">
+            <span>🗄️</span>
+            <p>SQL</p>
+        </div>
 
-#topButton:hover {
-transform: translateY(-5px);
+        <div class="skill">
+            <span>🌐</span>
+            <p>Networking</p>
+        </div>
 
-```
-background: #7dd3fc;
-```
+        <div class="skill">
+            <span>🔧</span>
+            <p>Cisco Packet Tracer</p>
+        </div>
 
-}
+        <div class="skill">
+            <span>💻</span>
+            <p>GitHub</p>
+        </div>
 
-/* =========================
-MOBILE
-========================= */
+    </div>
 
-@media (max-width: 768px) {
+</section>
 
-```
-.navbar {
-    flex-direction: column;
 
-    gap: 15px;
-}
+<!-- CONTACT -->
+<section id="contact" class="section contact">
 
-.nav-links {
-    gap: 12px;
+    <h2 class="section-title">📫 Contact</h2>
 
-    flex-wrap: wrap;
+    <p>
+        You can find my programming projects and activities on GitHub.
+    </p>
 
-    justify-content: center;
-}
+    <a
+        href="https://github.com/dixterballaso2-bit"
+        target="_blank"
+        class="github-button"
+    >
+        Visit My GitHub
+    </a>
 
-.hero {
-    min-height: 85vh;
-}
+</section>
 
-.hero h1 {
-    font-size: 42px;
-}
 
-.hero h2 {
-    font-size: 20px;
-}
+<!-- FOOTER -->
+<footer>
 
-.profile-picture {
-    width: 150px;
+    <p>
+        ⭐ Thank you for visiting my programmer portfolio!
+    </p>
 
-    height: 150px;
-}
+    <p>
+        © 2026 Dixter Ballaso
+    </p>
 
-.projects {
-    grid-template-columns: 1fr;
-}
+</footer>
 
-.skills {
-    grid-template-columns:
-        repeat(2, 1fr);
-}
-```
 
-}
+<!-- Scroll To Top Button -->
+<button id="topButton" title="Back to top">
+    ↑
+</button>
 
-@media (max-width: 450px) {
 
-```
-.hero h1 {
-    font-size: 35px;
-}
-
-.section {
-    padding: 70px 20px;
-}
-
-.skills {
-    grid-template-columns: 1fr;
-}
-
-.nav-links {
-    font-size: 14px;
-}
+<!-- JavaScript -->
+<script src="script.js"></script>
 ```
 
-}
+</body>
+              </html>
+              
